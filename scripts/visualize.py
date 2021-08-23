@@ -1,4 +1,3 @@
-from google.protobuf.symbol_database import Default
 import pandas as pd
 import seaborn as sn
 import matplotlib.pyplot as plt
@@ -27,7 +26,7 @@ def correlation_heatmap(corr):
     ax = sn.heatmap(
     corr, 
     vmin=-1, vmax=1, center=0,
-    cmap=sn.diverging_palette(20, 220, n=200),
+    cmap=sn.diverging_palette(60, 300, n=200),
     square=True
 )
     ax.set_xticklabels(
