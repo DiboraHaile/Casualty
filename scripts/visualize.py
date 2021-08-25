@@ -22,18 +22,19 @@ def histplot(df,x,y,title,hue=None,palette='Set2',w_size=12,h_size=7,size=None):
     plt.title(title)
     plt.show()
 
-def correlation_heatmap(corr):
+def correlation_heatmap(corr,title):
+    plt.figure(figsize=(20, 10))
     ax = sn.heatmap(
     corr, 
-    vmin=-1, vmax=1, center=0,
-    cmap=sn.diverging_palette(60, 300, n=200),
-    square=True
+    annot=True, cmap="coolwarm"
 )
+    plt.title("Correlation Map of"+title)
     ax.set_xticklabels(
     ax.get_xticklabels(),
     rotation=45,
     horizontalalignment='right'
 )
+    
 
 def lineplot(df,x=None,y=None,title=None,w_size=12,h_size=7,size=None):
     plt.figure(figsize=(w_size, h_size))
