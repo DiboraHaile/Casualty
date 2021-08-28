@@ -54,7 +54,5 @@ class CausalGraph:
     return Image(viz.draw(format='png'))
 
 def jaccard_similarity(graph1, graph2):
-    i = set(g).intersection(h)
-    return round(len(i) / (len(g) + len(h) - len(i)),3)
-
-jaccard_similarity(graph1.edges(), graph2.edges())
+    i = set(graph1).intersection(graph2)
+    return round(len(i) / (len(graph1) + len(graph2) - len(i)),3)
