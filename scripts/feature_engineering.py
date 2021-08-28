@@ -17,7 +17,7 @@ def prepare_X_y(X,y):
 
 def calculate_feature_importance(X_train,y_train,X):
   feature_names = [f'feature {i}' for i in range(X.shape[1])]
-  forest = RandomForestClassifier(random_state=0)
+  forest = RandomForestClassifier(n_estimators=100)
   forest.fit(X_train, y_train)
   importances = forest.feature_importances_
   std = np.std([
@@ -25,6 +25,6 @@ def calculate_feature_importance(X_train,y_train,X):
   return importances, std
 
 def select_features(X,y,data_x):
-  selector = SelectFromModel(estimator=RandomForestClassifier(random_state=0)).fit(X, y)
+  selector = SelectFromModel(estimator=RandomForestClassifier(n_estimators=100)).fit(X, y)
   selected_features = data_x.columns[(selector.get_support())]
   return selected_features
