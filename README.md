@@ -9,7 +9,7 @@ https://www.kaggle.com/uciml/breast-cancer-wisconsin-data
 
 
 ## Tasks 
-- [ ] Perform a causal inference task using Pearl’s framework;
+- [x] Perform a causal inference task using Structural Model;
 - [ ] Infer the causal graph from observational data and then validate the graph;
 - [ ] Merge machine learning with causal inference;
 
