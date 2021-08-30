@@ -26,13 +26,13 @@ class FeatureEngineering:
     self.select_features()
 
   def prepare_data(self):
-    """ prepare data by calling prepare_inputs 
-    and prepare_X_y
+    """ prepare data by calling prepare_X_y 
+    and split_X_y
     """
-    self.prepare_inputs()
     self.prepare_X_y()
+    self.split_X_y()
 
-  def prepare_inputs(self):
+  def prepare_X_y(self):
     """ Prepare X and y from a given dataframe
     by encoding categorical columns and converting
     to numpy """
@@ -42,7 +42,7 @@ class FeatureEngineering:
     self.y = y.reshape(-1,)
 
 
-  def prepare_X_y(self):
+  def split_X_y(self):
     """ Split X and y using sklearn train_test_split """
     self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
         self.X, self.y, stratify=self.y, random_state=42)
